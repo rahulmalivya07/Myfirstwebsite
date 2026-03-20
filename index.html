@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arbudda Art & Craft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #2b0033, #0a0010 70%);
+      color: white;
+    }
+
+    /* HEADER */
+    .header {
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,215,0,0.2);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 22px;
+      color: gold;
+    }
+
+    .brand span {
+      font-size: 12px;
+      color: #ccc;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 12px;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .divider {
+      width: 50px;
+      height: 2px;
+      background: gold;
+      margin: 15px auto;
+    }
+
+    /* GRID */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    /* CARD */
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .card-content h4 {
+      margin: 4px 0;
+      color: gold;
+      font-size: 13px;
+    }
+
+    .card-content p {
+      font-size: 11px;
+      color: #bbb;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 40px;
+      padding: 25px 15px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer h3 {
+      color: gold;
+      font-size: 16px;
+    }
+
+    .footer p {
+      font-size: 11px;
+      color: #aaa;
+    }
+
+    .footer a {
+      display: inline-block;
+      margin: 5px;
+      padding: 6px 14px;
+      background: gold;
+      color: black;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 11px;
+    }
+
+    /* POPUP */
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #popup img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 10px;
+      box-shadow: 0 0 25px gold;
+    }
+
+    /* CLOSE */
+    #close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* NAV BUTTONS */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #prev { left: 20px; }
+    #next { right: 20px; }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <h1>Arbudda</h1>
+      <span>Art & Craft</span>
+    </div>
+
+    <div class="contact">
+      <div><b>Malivya</b></div>
+      <div>📞 9148096799</div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="section">
+    <h2>Our Collection</h2>
+    <div class="divider"></div>
+
+    <div class="products">
+
+      <!-- YOUR IMAGES (UNCHANGED) -->
+      <div class="card"><img src="images/image1.jpeg" onclick="openPopup(this.src)"><div class="card-content"><h4>Handcrafted Art</h4><p>Beautiful handmade design.</p></div></div>
+      <div class="card"><img src="images/image2.jpeg" onclick="openPopup(this.src)"><div class="card-content"><h4>Wall Decor</h4><p>Elegant decorative pieces.</p></div></div>
+      <div class="card"><img src="images/image3.jpeg" onclick="openPopup(this.src)"><div class="card-content"><h4>Craft Work</h4><p>Creative handmade art.</p></div></div>
+      <div class="card"><img src="images/image4.jpeg" onclick="openPopup(this.src)"><div class="card-content"><h4>Custom Design</h4><p>Designed for your needs.</p></div></div>
+      <div class="card"><img src="images/image5.jpeg" onclick="openPopup(this.src)"><div class="card-content"><h4>Gift Items</h4><p>Perfect for gifting.</p></div></div>
+      <div class="card"><img src="images/img6.jpg" onclick="openPopup(this.src)"><div class="card-content"><h4>Home Decor</h4><p>Enhance interiors.</p></div></div>
+      <div class="card"><img src="images/img7.jpg" onclick="openPopup(this.src)"><div class="card-content"><h4>Creative Art</h4><p>Unique artistic touch.</p></div></div>
+      <div class="card"><img src="images/img8.jpg" onclick="openPopup(this.src)"><div class="card-content"><h4>Wood Craft</h4><p>Premium wooden designs.</p></div></div>
+      <div class="card"><img src="images/img9.jpg" onclick="openPopup(this.src)"><div class="card-content"><h4>Handmade Decor</h4><p>Elegant pieces.</p></div></div>
+      <div class="card"><img src="images/img10.jpg" onclick="openPopup(this.src)"><div class="card-content"><h4>Classic Collection</h4><p>Timeless designs.</p></div></div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <h3>Arbudda Art & Craft</h3>
+    <p>Premium handmade art collection</p>
+    <a href="https://wa.me/919148096799">Contact on WhatsApp</a>
+  </div>
+
+  <!-- POPUP -->
+  <div id="popup">
+    <span id="close" onclick="closePopup()">✖</span>
+    <span class="nav-btn" id="prev" onclick="prevImg()">❮</span>
+    <img id="popup-img">
+    <span class="nav-btn" id="next" onclick="nextImg()">❯</span>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const popup = document.getElementById("popup");
+    const popupImg = document.getElementById("popup-img");
+    const images = document.querySelectorAll(".card img");
+
+    let current = 0;
+
+    function openPopup(src) {
+      popup.style.display = "flex";
+
+      images.forEach((img, index) => {
+        if (img.src === src) current = index;
+      });
+
+      popupImg.src = images[current].src;
+    }
+
+    function closePopup() {
+      popup.style.display = "none";
+    }
+
+    function nextImg() {
+      current = (current + 1) % images.length;
+      popupImg.src = images[current].src;
+    }
+
+    function prevImg() {
+      current = (current - 1 + images.length) % images.length;
+      popupImg.src = images[current].src;
+    }
+
+    /* SWIPE SUPPORT */
+    let startX = 0;
+
+    popup.addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
+
+    popup.addEventListener("touchend", e => {
+      let endX = e.changedTouches[0].clientX;
+
+      if (startX - endX > 50) nextImg();   // swipe left
+      if (endX - startX > 50) prevImg();   // swipe right
+    });
+
+  </script>
+
+</body>
+</html>
